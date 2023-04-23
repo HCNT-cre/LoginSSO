@@ -27,6 +27,7 @@ const LoginForm = styled(Box)`
 
 const LoginSSO = () => {
   const handleClick = () =>{
+    localStorage.setItem('isLogin', "true")
     window.location.replace('http://localhost/');
   }
   return (
