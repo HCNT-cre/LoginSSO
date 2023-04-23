@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { useDispatch } from "react-redux";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -26,25 +26,49 @@ const LoginForm = styled(Box)`
 `;
 
 const LoginSSO = () => {
-  const handleClick = () =>{
-    localStorage.setItem('isLogin', "true")
-    window.location.replace('http://localhost/');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleClick = () => {
+    if (username === "admin@quangngai.gov.vn" && password === "huynhhagiang") {
+      window.location.replace("http://178.128.123.34/");
+    }
+  };
+
+  const handleEnterKey = (e) => {
+    if (e.key == 'Enter') {
+      handleClick()
+    }
   }
+
   return (
     <LoginContainer>
       <LoginForm>
         <Typography variant="h5" component="h2" gutterBottom>
-          Hệ thống cơ quan hành chính Quảng Ngãi - Đăng nhập SSO 
+          Hệ thống cơ quan hành chính Quảng Ngãi - Đăng nhập SSO
         </Typography>
-        <TextField label="Tài khoản" variant="outlined" />
-        <TextField label="Mật khẩu" type="password" variant="outlined" />
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleClick}
-        >
+        <TextField
+          label="Tài khoản"
+          variant="outlined"
+          value={username}
+          onChange={(event) => {
+            setUsername(event.target.value);
+          }}
+          onKeyDown={handleEnterKey}
+        />
+        <TextField
+          label="Mật khẩu"
+          type="password"
+          variant="outlined"
+          value={password}
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+          onKeyDown={handleEnterKey}
+        />
+        <Button variant="contained" color="primary" onClick={handleClick}>
           Đăng nhập
-        </Button >
+        </Button>
       </LoginForm>
     </LoginContainer>
   );
