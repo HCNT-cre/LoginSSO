@@ -26,7 +26,9 @@ const LoginForm = styled(Box)`
 `;
 
 const LoginSSO = () => {
-
+  const handleClick = () =>{
+    window.location.replace('http://localhost/');
+  }
   return (
     <LoginContainer>
       <LoginForm>
@@ -38,9 +40,10 @@ const LoginSSO = () => {
         <Button
           variant="contained"
           color="primary"
+          onClick={handleClick}
         >
           Đăng nhập
-        </Button>
+        </Button >
       </LoginForm>
     </LoginContainer>
   );
