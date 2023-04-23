@@ -34,7 +34,7 @@ const LoginSSO = () => {
     <LoginContainer>
       <LoginForm>
         <Typography variant="h5" component="h2" gutterBottom>
-          Đăng nhập SSO
+          Hệ thống cơ quan hành chính Quảng Ngãi - Đăng nhập SSO 
         </Typography>
         <TextField label="Tài khoản" variant="outlined" />
         <TextField label="Mật khẩu" type="password" variant="outlined" />
