@@ -25,13 +25,21 @@ const LoginForm = styled(Box)`
   text-align: center;
 `;
 
+const users = [
+  { username: "hieu@gmail.com", password: "1111111" },
+  { username: "cuong@gmail.com", password: "1111111" },
+  { username: "luong@gmail.com", password: "1111111" },
+]
+
 const LoginSSO = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleClick = () => {
-    if (username === "admin@quangngai.gov.vn" && password === "huynhhagiang") {
-      window.location.replace("http://178.128.123.34/logged-in");
+    for (const user of users) {
+      if (user.username === username && user.password === password) {
+        window.location.replace(`http://178.128.123.34/logged-in/${username}`);
+      }
     }
   };
 
