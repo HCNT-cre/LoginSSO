@@ -26,9 +26,9 @@ const LoginForm = styled(Box)`
 `;
 
 const users = [
-  { username: "hieu@gmail.com", password: "1111111" },
-  { username: "cuong@gmail.com", password: "1111111" },
-  { username: "luong@gmail.com", password: "1111111" },
+  { username: "hieu@gmail.com", password: "1111111", id: 3 },
+  { username: "cuong@gmail.com", password: "1111111", id: 1 },
+  { username: "luong@gmail.com", password: "1111111", id: 2 },
 ]
 
 const LoginSSO = () => {
@@ -38,7 +38,7 @@ const LoginSSO = () => {
   const handleClick = () => {
     for (const user of users) {
       if (user.username === username && user.password === password) {
-        window.location.replace(`http://178.128.123.34/logged-in/${username}`);
+        window.location.replace(`http://178.128.123.34/logged-in/${user.id}`);
       }
     }
   };
