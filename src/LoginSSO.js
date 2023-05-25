@@ -31,7 +31,7 @@ const LoginSSO = () => {
 
   const handleClick = () => {
     if (username === "admin@quangngai.gov.vn" && password === "huynhhagiang") {
-      window.location.replace("http://178.128.123.34/");
+      window.location.replace("http://178.128.123.34/logged-in");
     }
   };
 
