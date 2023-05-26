@@ -29,6 +29,7 @@ const users = [
   { username: "hieu@gmail.com", password: "1111111", id: 3 },
   { username: "cuong@gmail.com", password: "1111111", id: 1 },
   { username: "luong@gmail.com", password: "1111111", id: 2 },
+  { username: "admin@quangngai.gov.vn", password: "1111111", id: 0 },
 ]
 
 const LoginSSO = () => {
