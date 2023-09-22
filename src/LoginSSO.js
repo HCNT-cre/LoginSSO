@@ -39,7 +39,7 @@ const LoginSSO = () => {
   const handleClick = () => {
     for (const user of users) {
       if (user.username === username && user.password === password) {
-        window.location.replace(`http://178.128.123.34/logged-in/${user.id}`);
+        window.location.replace(`http://luutrutailieu.cloud/logged-in/${user.id}`);
       }
     }
   };
